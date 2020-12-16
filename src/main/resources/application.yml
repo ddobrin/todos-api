@@ -1,0 +1,36 @@
+todos:
+  api:
+    limit: 1024
+
+logging:
+  level:
+    org:
+      springframework: INFO
+
+# running locally and connecting to backend in k8s
+cacheUrl: "http://todos-redis.default.svc.cluster.local:8888"
+backendUrl: "http://todos-mysql.default.svc.cluster.local:9090"
+
+spring:
+  application:
+    name: todos-api
+management:
+  # Actuators
+  # see https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints
+  # exposing endpoints config options
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+        exclude: prometheus
+  endpoint:
+    health:
+      show-details: always
+info:
+  app:
+    name: todos-api - Spring Boot Application
+    description: TODOs - API - business logic w/ DB and cache access
+# Use default 8080 port
+# server:
+#   port: 8082
