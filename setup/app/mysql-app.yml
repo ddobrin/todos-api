@@ -54,7 +54,7 @@ spec:
               protocol: TCP
           env:
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://todo-mysql-instance-mariadb.default.svc.cluster.local/my_database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+              value: "jdbc:mysql://todo-mysql-instance-1-mariadb.default.svc.cluster.local/my_database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
               # value: "jdbc:mysql://localhost/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
             - name: SPRING_DATASOURCE_USERNAME
               value: "root"

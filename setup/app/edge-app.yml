@@ -37,7 +37,7 @@ spec:
           protocol: TCP
         env:
         - name: TODOS_API_ENDPOINT
-          value: "http://todos-api.default.svc.cluster.local:80"
+          value: "http://todos-api-service.default.svc.cluster.local:80"
         - name: TODOS_UI_ENDPOINT
           value: "http://todos-webui.default.svc.cluster.local:8080"
 ---

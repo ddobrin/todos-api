@@ -122,7 +122,7 @@ docker images | grep todos-api
 The app can be built and started locally from the command-line or from withing an IDE
 ```shell
 ./mvnw clean package
-java -jar target/todos-api-1.2.0-SNAPSHOT.jar 
+java -jar target/todos-api-1.3.0.jar 
 
 # requests can be sent to localhost:8082
 # /src/main/resources/application.yaml needs to be updated with the endpoints of the cache, respectively database
