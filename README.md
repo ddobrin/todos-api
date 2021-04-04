@@ -41,7 +41,7 @@ ex.:
 ## Pre-requisites for using TODOS-API
 Building and running the application assumes that you have installed a number of pre-requisites:
 
-* Java 8 - configured to run the application by default. You can decided to build and run the app also with Java 11 or 14 
+* Java 11 - configured to run the application by default. You can decided to run also with Java 16 
 * Maven - compiling the application and running tests
 * Helm v3 - for installing the caching and database solutions. [Helm installation link](https://helm.sh/docs/intro/install/).
 * Skaffold - for building, pushing, deploying and debugging the application. [Skaffold installation link](https://skaffold.dev/docs/install/).
@@ -54,6 +54,10 @@ Building and running the application assumes that you have installed a number of
 This repo contains 4 scripts for setting up, respectively cleaning up pre-requisite tolls and Spring Boot microservices for usage with the TODOS-API application.
 
 ```shell
+# Please validate that the downloaded scripts are executable
+# Otherwise, in the /setup folder, execute
+chmod +x ./setup/*
+ 
 # Setup - please run in order
 ./setup/install-tools.sh -- Helm chart based installer for caching and database
 cd setup
@@ -81,7 +85,7 @@ todos-webui                         LoadBalancer   10.0.14.60    104.197.8.27   
 ```
 
 ## Compiling and Building and Image for the TODOS-API
-The application is configured by default with Java 8 in the Maven pom.xml file. You can update it to Java 11 or Java 14 if you choose to do so.
+The application is configured by default with Java 11 in the Maven pom.xml file. You can update it to Java 16 if you choose to do so.
 
 __Local development__
 
