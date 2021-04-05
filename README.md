@@ -56,10 +56,11 @@ This repo contains 4 scripts for setting up, respectively cleaning up pre-requis
 ```shell
 # Please validate that the downloaded scripts are executable
 # Otherwise, in the /setup folder, execute
-chmod +x ./setup/*
+cd setup
+chmod +x *
  
 # Setup - please run in order
-./setup/install-tools.sh -- Helm chart based installer for caching and database
+./install-tools.sh -- Helm chart based installer for caching and database
 cd setup
 ./setup-app.sh -- kubectl-based deployment for 4 services for the TODO app
 
@@ -80,8 +81,8 @@ todos-service                       LoadBalancer   10.0.11.54    35.225.226.171 
 todos-webui                         LoadBalancer   10.0.14.60    104.197.8.27      8080:30908/TCP   47h
 
 # Cleanup - please run in order
-./setup/cleanup-tools.sh -- Helm chart based installer for caching and database
-./setup/remove-app.sh -- kubectl-based removal for 4 services for the TODO app
+./cleanup-tools.sh -- Helm chart based installer for caching and database
+./remove-app.sh -- kubectl-based removal for 4 services for the TODO app
 ```
 
 ## Compiling and Building and Image for the TODOS-API
@@ -126,7 +127,7 @@ docker images | grep todos-api
 The app can be built and started locally from the command-line or from withing an IDE
 ```shell
 ./mvnw clean package
-java -jar target/todos-api-1.3.0.jar 
+java -jar target/todos-api-1.4.0.jar 
 
 # requests can be sent to localhost:8082
 # /src/main/resources/application.yaml needs to be updated with the endpoints of the cache, respectively database
